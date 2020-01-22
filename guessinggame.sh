@@ -2,9 +2,7 @@
 # File: guessinggame.sh
 
 # get number of files as int
-nfiles_pre=$(ls | wc -l)
-nfiles=$((nfiles_pre))
-
+nfiles=$(ls -a | wc -l | egrep -o "[0-9]+")
 
 function compare_value {
 	if [[ $response < $nfiles ]]
